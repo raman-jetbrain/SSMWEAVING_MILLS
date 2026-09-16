@@ -1,12 +1,8 @@
 import React from 'react'
-import Dashboard from './pages/Dashboard'
+import Router from './routes/NavRouter'
 
 const App = () => {
-    return (
-        <div>
-            <Dashboard />
-        </div>
-    )
+  return <Router />
 }
 
 export default App
