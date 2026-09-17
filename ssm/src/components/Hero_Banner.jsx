@@ -37,7 +37,7 @@ const Hero_Banner = () => {
   }, [currentIndex])
 
   return (
-    <section className="relative w-full h-190 overflow-hidden bg-black">
+    <section className="relative w-full h-190 overflow-hidden bg-black border-b-8 border-white">
       {/* Background Video */}
       <video
         ref={videoRef}
@@ -69,7 +69,7 @@ const Hero_Banner = () => {
         <div className="flex gap-4">
           <a
             href="#contact"
-            className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-colors"
+            className="bg-emerald-900 hover:bg-emerald-900 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-colors"
           >
             Explore
           </a>

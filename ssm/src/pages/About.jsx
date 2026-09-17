@@ -6,12 +6,15 @@ import Input from '../components/Input'
 import Footer from '../components/Footer'
 import Space from '../components/Space'
 import Hero from '../components/Hero'
+import ProductCon from '../components/Containers/productCon'
 
 const About = () => {
   return (
     <div>
       <Navbar />
       <Hero />  
+      <ProductCon/>
+      <Container/>
     </div>
   )
 }

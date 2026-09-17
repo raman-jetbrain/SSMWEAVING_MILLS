@@ -4,7 +4,7 @@ const Cardbtn = () => {
   return (
     <button className="group relative mx-auto flex items-center py-3 px-[18px] border-none bg-transparent cursor-pointer transition-all duration-200 active:scale-95">
       {/* Expanding background circle that becomes full width on hover */}
-      <span className="absolute top-0 left-0 block rounded-[50px] bg-gray-400 w-[45px] h-[45px] transition-all duration-300 group-hover:w-full" />
+      <span className="absolute top-0 left-0 block rounded-[50px] bg-emerald-600 w-[45px] h-[45px] transition-all duration-300 group-hover:w-full" />
 
       {/* Button Text */}
       <span className="relative font-['Ubuntu',sans-serif] text-[18px] font-bold tracking-[0.05em] text-black">

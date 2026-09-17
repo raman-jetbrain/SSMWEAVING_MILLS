@@ -15,11 +15,10 @@ const Dashboard = () => {
             <Hero_Banner />
             <Space />
             <DevCon />
-            <Space />
             <HomeCon/>
-            <Container  />
+            
             <Space />
-            <Container  />
+           
             <Space />
             <Footer />
         </div>
