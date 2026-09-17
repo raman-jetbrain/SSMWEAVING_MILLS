@@ -1,15 +1,17 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import Dashboard from '../pages/Dashboard'
 import About from '../pages/About'
 import Services from '../pages/Services'
 import Contact from '../pages/Contact'
 import Products from '../pages/Products'
 
-const NavRouter = () => {
+const AnimatedRoutes = () => {
+  const location = useLocation()
+
   return (
-    <BrowserRouter>
-      <Routes>
+    <div key={location.pathname} className="page-transition">
+      <Routes location={location}>
         <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
@@ -17,6 +19,14 @@ const NavRouter = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Products />} />
       </Routes>
+    </div>
+  )
+}
+
+const NavRouter = () => {
+  return (
+    <BrowserRouter>
+      <AnimatedRoutes />
     </BrowserRouter>
   )
 }

@@ -3,20 +3,21 @@ import Cardbtn from '../Buttons/Cardbtn'
 
 const DevCon = () => {
   return (
-    <>
-    <div className='flex justify-center items-center bg-gray-50 text-black font-sans text-5xl pb-4'>
-        <div className='flex justify-center items-center p-5'>
-            <h1>
-                We’re setting a  <strong > New benchmark </strong><br/> in weaving  to bring modern  <br/> 
-               <strong>innovation</strong> to timeless <br/> craftsmanship 
-            </h1>
-        </div>
-    </div>
-     <div className='flex items-center justify-end p-1 bg-gray-50 pb-10'>
-                <Cardbtn/>
-    </div>
-    </>
-    
+    <section className="bg-gray-50 py-12 px-6">
+      <div className="mx-auto max-w-5xl text-center">
+        <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-5xl">
+          We’re setting a <span className="text-emerald-700">new benchmark</span>
+          <br />
+          in weaving to bring modern
+          <br />
+          <span className="text-emerald-700">innovation</span> to timeless craftsmanship
+        </h2>
+      </div>
+
+      <div className="mt-8 flex justify-center">
+        <Cardbtn />
+      </div>
+    </section>
   )
 }
 

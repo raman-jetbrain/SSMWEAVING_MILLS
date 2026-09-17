@@ -7,6 +7,7 @@ import Hero_Banner from '../components/Hero_Banner'
 import Trustdiv from '../components/Trustdiv'
 import DevCon from '../components/Containers/DevCon'
 import HomeCon from '../components/Containers/HomeCon'
+import ProductCon from '../components/Containers/ProductCon'
 
 const Dashboard = () => {
     return (
@@ -16,9 +17,8 @@ const Dashboard = () => {
             <Space />
             <DevCon />
             <HomeCon/>
-            
+            <ProductCon />
             <Space />
-           
             <Space />
             <Footer />
         </div>
