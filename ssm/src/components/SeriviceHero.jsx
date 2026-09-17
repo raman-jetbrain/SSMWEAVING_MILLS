@@ -7,7 +7,7 @@ const SeriviceHero = () => {
           <img
             src={img}
             alt="SSM textile shipping and export services"
-            className="h-full w-full object-cover"
+            className="block h-72 w-full object-cover "
           />
         </section>
   )
