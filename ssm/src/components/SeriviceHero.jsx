@@ -3,11 +3,11 @@ import img from '../assets/shipping.png'
 
 const SeriviceHero = () => {
   return (
-     <section className="w-full">
+      <section className="w-full h-full object-cover">
           <img
             src={img}
             alt="SSM textile shipping and export services"
-            className="block h-72 w-full object-cover "
+            className="h-full w-full object-cover "
           />
         </section>
   )

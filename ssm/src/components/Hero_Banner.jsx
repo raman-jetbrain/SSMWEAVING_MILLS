@@ -9,19 +9,12 @@ const Hero_Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isFading, setIsFading] = useState(false)
 
-  const handleTimeUpdate = () => {
-    const video = videoRef.current
-    if (!video || !video.duration) return
-
-    const timeLeft = video.duration - video.currentTime
-    if (timeLeft <= 0.8 && !isFading) {
-      setIsFading(true)
-    }
-  }
-
   const handleVideoEnded = () => {
-    const nextIndex = (currentIndex + 1) % playlist.length
-    setCurrentIndex(nextIndex)
+    setIsFading(true)
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % playlist.length)
+      setIsFading(false)
+    }, 450)
   }
 
   useEffect(() => {
@@ -29,11 +22,7 @@ const Hero_Banner = () => {
     if (!video) return
 
     video.load()
-    video.play()
-      .then(() => {
-        setIsFading(false)
-      })
-      .catch(() => {})
+    video.play().catch(() => {})
   }, [currentIndex])
 
   return (
@@ -47,7 +36,6 @@ const Hero_Banner = () => {
         autoPlay
         muted
         playsInline
-        onTimeUpdate={handleTimeUpdate}
         onEnded={handleVideoEnded}
         aria-label="SSM Weaving Mills"
       >
