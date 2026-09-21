@@ -8,23 +8,46 @@ import img5 from  '../../assets/Products/prod5.jpg'
 import img6 from '../../assets/Products/prod6.webp'
 
 const products = [
-  { name: 'Woven Fabrics', image: img1, detail: 'Premium woven textiles for fashion and industrial use.' },
-  { name: 'Knitted Fabrics', image: img2, detail: 'Comfort-first knits for everyday and premium use.' },
-  { name: 'Home Textiles', image: img3, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
-  { name: 'Export Ready Goods', image: img4, detail: 'High-volume shipments crafted to international standards.' },
-   { name: 'Home Textiles', image: img5, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
-  { name: 'Export Ready Goods', image: img6, detail: 'High-volume shipments crafted to international standards.' },
-   { name: 'Woven Fabrics', image: img1, detail: 'Premium woven textiles for fashion and industrial use.' },
-  { name: 'Knitted Fabrics', image: img2, detail: 'Comfort-first knits for everyday and premium use.' },
-  { name: 'Home Textiles', image: img3, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
-  { name: 'Export Ready Goods', image: img4, detail: 'High-volume shipments crafted to international standards.' },
-   { name: 'Home Textiles', image: img5, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
-  { name: 'Export Ready Goods', image: img6, detail: 'High-volume shipments crafted to international standards.' },
-  
+  { name: 'Reactive Print In Woven Fabrics', image: img1, detail: 'Premium woven textiles for fashion and industrial use.' },
+  { name: 'Yarn Dyed Fabrics', image: img2, detail: 'Comfort-first knits for everyday and premium use.' },
+  { name: 'Dyed Woven Fabrics', image: img3, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
+  { name: 'Flannel Fabrics', image: img4, detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Corduroy Fabrics', image: img5, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
+  { name: 'Knitted Fabrics', image: img6, detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Canvas Fabrics', image: img1, detail: 'Premium woven textiles for fashion and industrial use.' },
+  { name: 'Cotton Grey Sheeting', image: img2, detail: 'Comfort-first knits for everyday and premium use.' },
+  { name: 'Knitted Garments', image: img3, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
+  { name: 'Woven Terry Fabric', image: img4, detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Denim Fabric', image: img5, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
+  { name: 'Silk Pure', image: img6, detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Woven Canvas Bags', image: img3, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
+  { name: 'Poly Cotton Woven Fabric', image: img4, detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Caps', image: img5, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
+  { name: 'Sports Dress', image: img6, detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Bed Sheets', image: img4, detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Round Neck T-Shirt', image: img5, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
+  { name: 'Collared T-Shirt', image: img6, detail: 'High-volume shipments crafted to international standards.' },
+    { name: 'Baby Garments', image: img6, detail: 'High-volume shipments crafted to international standards.' },
 ]
 
 const sizes = ['XS', 'S', 'M', 'L', 'XL', 'Custom size']
 const minimumQuantity = 500
+
+const getFabricDetails = (name) => {
+  if (name.includes('Knitted') || name.includes('T-Shirt') || name.includes('Garments')) {
+    return { composition: 'Cotton or cotton blend', construction: 'Knitted construction', finish: 'Soft hand feel', suitableFor: 'T-shirts, sportswear, and everyday garments' }
+  }
+
+  if (name.includes('Denim') || name.includes('Corduroy') || name.includes('Canvas')) {
+    return { composition: 'Cotton or cotton-rich blend', construction: 'Structured woven construction', finish: 'Durable surface finish', suitableFor: 'Workwear, bags, outerwear, and accessories' }
+  }
+
+  if (name.includes('Flannel') || name.includes('Bed Sheets') || name.includes('Terry')) {
+    return { composition: 'Cotton or cotton blend', construction: 'Woven construction', finish: 'Comfort-focused finish', suitableFor: 'Home textiles, bedding, and hospitality' }
+  }
+
+  return { composition: 'Custom cotton or blended fibre', construction: 'Woven construction', finish: 'Made to specification', suitableFor: 'Fashion, uniforms, and commercial textile goods' }
+}
 
 const ProductCon = () => {
   const [selectedSizes, setSelectedSizes] = useState({})
@@ -264,6 +287,14 @@ const ProductCon = () => {
                   <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">About this product</p>
                   <h4 id="product-dialog-title" className="mt-2 text-2xl font-bold text-slate-900">{selectedProduct.item.name}</h4>
                   <p className="mt-4 text-sm leading-6 text-slate-600">{selectedProduct.item.detail}</p>
+                  <div className="mt-6 grid gap-3 border-y border-slate-200 py-5 text-sm sm:grid-cols-2">
+                    {Object.entries(getFabricDetails(selectedProduct.item.name)).map(([label, value]) => (
+                      <div key={label}>
+                        <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">{label.replace(/([A-Z])/g, ' $1')}</p>
+                        <p className="mt-1 text-slate-700">{value}</p>
+                      </div>
+                    ))}
+                  </div>
                   <p className="mt-6 mb-2 text-sm font-semibold text-slate-800">Select size</p>
                   <div className="flex flex-wrap gap-2" role="group" aria-label={`Select size for ${selectedProduct.item.name}`}>
                     {sizes.map((size) => (
@@ -326,7 +357,7 @@ const ProductCon = () => {
               <div className="pt-10">
                 <h4 className="mb-6 text-2xl font-bold text-slate-900">More products</h4>
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {products.map((item, index) => (
+                  {products.map((item, index) => ({ item, index })).filter(({ index }) => index !== selectedProduct.index).map(({ item, index }) => (
                     <div
                       key={`${item.name}-detail-${index}`}
                       onClick={() => openProduct(item, index)}
