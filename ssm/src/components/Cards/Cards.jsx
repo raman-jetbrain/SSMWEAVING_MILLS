@@ -1,4 +1,4 @@
-import cardImg from '../../assets/bg-ssm.png'
+import cardImg from '../../assets/icons/bg-ssm.png'
 
 const Cards = () => {
   return (

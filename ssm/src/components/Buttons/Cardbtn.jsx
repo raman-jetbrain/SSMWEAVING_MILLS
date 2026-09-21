@@ -5,11 +5,11 @@ const Cardbtn = () => {
   return (
     <Link
       to="/about"
-      className="group relative mx-auto flex items-center py-3 px-4 border-none bg-transparent cursor-pointer transition-all duration-200 active:scale-95"
+      className="group relative mx-auto flex items-center border-none bg-transparent px-3 py-2.5 transition-all duration-200 active:scale-95 sm:px-4 sm:py-3"
     >
-      <span className="absolute top-0 left-0 block rounded-full bg-emerald-600 w-11 h-11 transition-all duration-300 group-hover:w-full" />
+      <span className="absolute left-0 top-0 block h-10 w-10 rounded-full bg-emerald-600 transition-all duration-300 group-hover:w-full sm:h-11 sm:w-11" />
 
-      <span className="relative font-sans text-lg font-bold tracking-wide text-black">
+      <span className="relative font-sans text-base font-bold tracking-wide text-black sm:text-lg">
         About us
       </span>
 

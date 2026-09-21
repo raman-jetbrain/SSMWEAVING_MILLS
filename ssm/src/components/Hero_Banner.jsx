@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import videoOne from '../assets/Hero_banner.mp4'
-import videoTwo from '../assets/Hero_banner2.mp4'
+import videoOne from '../assets/Banners/Hero_banner.mp4'
+import videoTwo from '../assets/Banners/Hero_banner2.mp4'
 
 const playlist = [videoOne, videoTwo]
 
@@ -26,11 +26,11 @@ const Hero_Banner = () => {
   }, [currentIndex])
 
   return (
-    <section className="relative w-full h-190 overflow-hidden bg-black border-b-8 border-white">
+    <section className="relative aspect-4/3 w-full overflow-hidden border-b-8 border-white bg-black sm:aspect-video lg:aspect-21/9">
       {/* Background Video */}
       <video
         ref={videoRef}
-        className={`block aspect-video h-auto w-full object-cover transition-opacity duration-700 ease-in-out ${
+        className={`absolute inset-0 block h-full w-full object-cover transition-opacity duration-700 ease-in-out ${
           isFading ? 'opacity-0' : 'opacity-100'
         }`}
         autoPlay
@@ -47,14 +47,14 @@ const Hero_Banner = () => {
       <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* Text Content Overlay */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-white text-4xl md:text-6xl font-bold tracking-tight mb-4 drop-shadow-md">
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 text-center sm:px-6">
+        <h1 className="max-w-4xl text-[clamp(1.75rem,5vw,3.75rem)] font-bold leading-tight tracking-tight text-white drop-shadow-md">
           Welcome to SSM Weaving <br /> & Knitting Mills
         </h1>
-        <p className="text-gray-200 text-lg md:text-xl max-w-2xl mb-8 drop-shadow">
+        <p className="mb-5 max-w-2xl text-[clamp(0.85rem,2vw,1.25rem)] leading-relaxed text-gray-200 drop-shadow sm:mb-8">
           Crafting excellence in every thread with state-of-the-art weaving technology.
         </p>
-        <div className="flex gap-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
           <a
             href="#contact"
             className="bg-emerald-900 hover:bg-emerald-900 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-colors"

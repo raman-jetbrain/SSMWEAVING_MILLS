@@ -7,44 +7,44 @@ import img4 from '../../assets/Dashboard/img4.webp'
 const HomeCon = () => {
 return (
     <>
-        <div className='flex flex-col items-center justify-center h-200 w-auto bg-gray-50 border-t-8 border-white'>
-            <h1 className='text-4xl font-bold '> Why Trust Our Products ? 
+        <div className='flex w-full flex-col items-center justify-center border-t-8 border-white bg-gray-50 px-4 py-12 sm:px-6 sm:py-16 lg:py-20'>
+            <h1 className='text-center text-3xl font-bold sm:text-4xl lg:text-5xl'> Why Trust Our Products ?
                 
             </h1>
-            <h1 className='text-emerald-700' >
+            <h1 className='mt-3 text-center text-sm text-emerald-700 sm:text-base' >
                     The standard we weave into every single product.
                 </h1>
-            <div className='flex items-center justify-between h-130 w-380 bg-gray-70 pr-20 pl-20 text-white'>
-                     <div className='flex flex-col items-center justify-start h-100 w-74 pt-2 bg-white rounded-2xl border-4 hover:shadow-2xl'>
-                        <div className='flex items-start bg-amber-100 h-80 w-70 rounded-2xl'>
+                     <div className='grid w-full max-w-7xl grid-cols-2 gap-3 pt-8 text-white sm:gap-6 lg:grid-cols-4 lg:pt-10'>
+                                      <div className='flex h-full flex-col items-center justify-start rounded-2xl border-4 bg-white p-2 hover:shadow-2xl'>
+                                          <div className='aspect-4/3 w-full rounded-2xl bg-amber-100'>
                             <img src={img1} alt="" className='relative w-full h-full object-cover rounded-2xl' />
                          </div>
-                        <h5 className='flex flex-row items-center justify-center text-black font-sans pl-2 pt-2'>Commitment to Quality</h5>
-                        <p className='text-gray-600 p-2 text-center leading-relaxed '>Precision in every stitch,We delivers uncompromising quality & ensuring excellence in every thread</p>
+                        <h5 className='px-1 pt-3 text-center font-sans text-sm font-semibold text-black sm:px-2 sm:text-lg'>Commitment to Quality</h5>
+                        <p className='p-1 text-center text-xs leading-relaxed text-gray-600 sm:p-2 sm:text-base'>Precision in every stitch,We delivers uncompromising quality & ensuring excellence in every thread</p>
                     </div>
                     
-                    <div className='flex flex-col items-center justify-start h-100 w-74 pt-2 bg-white rounded-2xl border-4 hover:shadow-2xl'>
-                        <div className='flex items-start bg-amber-100 h-80 w-70 rounded-2xl'>
+                    <div className='flex h-full flex-col items-center justify-start rounded-2xl border-4 bg-white p-2 hover:shadow-2xl'>
+                        <div className='aspect-4/3 w-full rounded-2xl bg-amber-100'>
                             <img src={img2} alt="" className='relative w-full h-full object-cover rounded-2xl' />
                          </div>
-                        <h5 className='flex flex-row items-center justify-center text-black font-sans pl-2 pt-2'>Customer-Centric Apporach</h5>
-                        <p className='text-gray-600 p-2 text-center leading-relaxed '>Precision in every stitch,We delivers uncompromising quality & ensuring excellence in every thread</p>
+                        <h5 className='px-1 pt-3 text-center font-sans text-sm font-semibold text-black sm:px-2 sm:text-lg'>Customer-Centric Apporach</h5>
+                        <p className='p-1 text-center text-xs leading-relaxed text-gray-600 sm:p-2 sm:text-base'>Precision in every stitch,We delivers uncompromising quality & ensuring excellence in every thread</p>
                     </div>
 
-                       <div className='flex flex-col items-center justify-start h-100 w-74 pt-2 bg-white rounded-2xl border-4 hover:shadow-2xl'>
-                        <div className='flex items-start bg-amber-100 h-80 w-70 rounded-2xl'>
+                       <div className='flex h-full flex-col items-center justify-start rounded-2xl border-4 bg-white p-2 hover:shadow-2xl'>
+                        <div className='aspect-4/3 w-full rounded-2xl bg-amber-100'>
                             <img src={img3} alt="" className='relative w-full h-full object-cover rounded-2xl' />
                          </div>
-                        <h5 className='flex flex-row items-center justify-center text-black font-sans pl-2 pt-2'>Craftmanship Excellents</h5>
-                        <p className='text-gray-600 p-2 text-center leading-relaxed '>Precision in every stitch,We delivers uncompromising quality & ensuring excellence in every thread</p>
+                        <h5 className='px-1 pt-3 text-center font-sans text-sm font-semibold text-black sm:px-2 sm:text-lg'>Craftmanship Excellents</h5>
+                        <p className='p-1 text-center text-xs leading-relaxed text-gray-600 sm:p-2 sm:text-base'>Precision in every stitch,We delivers uncompromising quality & ensuring excellence in every thread</p>
                     </div>
 
-                    <div className='flex flex-col items-center justify-start h-100 w-74 pt-2 bg-white rounded-2xl border-4 hover:shadow-2xl'>
-                        <div className='flex items-start bg-amber-100 h-80 w-70 rounded-2xl'>
+                    <div className='flex h-full flex-col items-center justify-start rounded-2xl border-4 bg-white p-2 hover:shadow-2xl'>
+                        <div className='aspect-4/3 w-full rounded-2xl bg-amber-100'>
                             <img src={img4} alt="" className='relative w-full h-full object-cover rounded-2xl' />
                          </div>
-                        <h5 className='flex flex-row items-center justify-center text-black font-sans pl-2 pt-2'>Mericulous Attention to Detail</h5>
-                        <p className='text-gray-600 p-2 text-center leading-relaxed '>Precision in every stitch,We delivers uncompromising quality & ensuring excellence in every thread</p>
+                        <h5 className='px-1 pt-3 text-center font-sans text-sm font-semibold text-black sm:px-2 sm:text-lg'>Mericulous Attention to Detail</h5>
+                        <p className='p-1 text-center text-xs leading-relaxed text-gray-600 sm:p-2 sm:text-base'>Precision in every stitch,We delivers uncompromising quality & ensuring excellence in every thread</p>
                     </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import img from '../assets/shipping.png'
+import img from '../assets/Banners/shipping.png'
 
 const SeriviceHero = () => {
   return (

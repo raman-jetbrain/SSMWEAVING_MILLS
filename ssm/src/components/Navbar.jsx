@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import img from '../assets/bg-ssm.png'
+import { Menu, X } from 'lucide-react'
+import img from '../assets/icons/bg-ssm.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,18 +16,18 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='bg-white text-black font-sans py-2 h-17'>
-        <div className='flex items-center justify-between'>
+      <div className='bg-white px-4 py-2 text-black font-sans sm:px-6'>
+        <div className='flex items-center justify-between gap-4'>
           {/* Logo click opens drawer */}
           <button 
             onClick={() => setIsOpen(true)} 
             className='focus:outline-none cursor-pointer'
           >
-            <img src={img} className='w-40 h-auto' alt='SSM logo' />
+            <img src={img} className='h-auto w-28 sm:w-40' alt='SSM logo' />
           </button>
 
-          <div className='flex justify-center items-center space-x-4 m-2'>
-            <ul className='flex space-x-4 w-130'>
+          <div className='hidden items-center justify-center space-x-4 m-2 md:flex'>
+            <ul className='flex space-x-4'>
               {navItems.map((item) => (
                 <li key={item.to}>
                   <NavLink 
@@ -43,6 +44,16 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
+
+          <button
+            type='button'
+            onClick={() => setIsOpen(true)}
+            className='rounded-lg p-2 text-slate-700 hover:bg-slate-100 md:hidden'
+            aria-label='Open navigation menu'
+            title='Open navigation menu'
+          >
+            <Menu size={24} aria-hidden='true' />
+          </button>
         </div>
       </div>
 
@@ -55,18 +66,22 @@ const Navbar = () => {
       )}
 
       {/* Slide-over Drawer */}
-      <div className={`fixed top-0 left-0 h-full w-64 bg-white z-50 shadow-lg transform transition-transform duration-300 ease-in-out ${
+      <div className={`fixed left-0 top-0 z-50 h-full w-[min(20rem,calc(100vw-2rem))] transform bg-white shadow-lg transition-transform duration-300 ease-in-out ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}>
         <div className='flex items-center justify-between p-4 border-b'>
-          <h2 className='text-lg font-semibold'>Wellcome to..
-            <h1 className='text-4xl text-emerald-800 font-bold font-sans-'>SSM ERP</h1>
-          </h2>
-          <button 
+          <div className='text-lg font-semibold'>
+            <p>Welcome to...</p>
+            <p className='font-sans text-4xl font-bold text-emerald-800'>SSM ERP</p>
+          </div>
+          <button
+            type='button'
             onClick={() => setIsOpen(false)}
-            className='text-gray-500 hover:text-black font-bold p-1'
+            className='rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-black'
+            aria-label='Close navigation menu'
+            title='Close navigation menu'
           >
-            ✕
+            <X size={22} aria-hidden='true' />
           </button>
         </div>
 

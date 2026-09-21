@@ -26,3 +26,27 @@ body {
 		transform: translateY(0);
 	}
 }
+
+.countries-marquee {
+	min-inline-size: 0;
+}
+
+.countries-marquee__track {
+	animation: countriesMarquee 60s linear infinite;
+}
+
+@keyframes countriesMarquee {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(calc(-50% - 1.5rem));
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.countries-marquee__track {
+		animation: none;
+	}
+}
