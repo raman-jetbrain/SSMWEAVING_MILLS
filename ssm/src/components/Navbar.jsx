@@ -18,13 +18,9 @@ const Navbar = () => {
     <>
       <div className='bg-white px-4 py-2 text-black font-sans sm:px-6'>
         <div className='flex items-center justify-between gap-4'>
-          {/* Logo click opens drawer */}
-          <button 
-            onClick={() => setIsOpen(true)} 
-            className='focus:outline-none cursor-pointer'
-          >
+          <div className='focus:outline-none'>
             <img src={img} className='h-auto w-28 sm:w-40' alt='SSM logo' />
-          </button>
+          </div>
 
           <div className='hidden items-center justify-center space-x-4 m-2 md:flex'>
             <ul className='flex space-x-4'>
@@ -50,6 +46,8 @@ const Navbar = () => {
             onClick={() => setIsOpen(true)}
             className='rounded-lg p-2 text-slate-700 hover:bg-slate-100 md:hidden'
             aria-label='Open navigation menu'
+            aria-expanded={isOpen}
+            aria-controls='mobile-navigation'
             title='Open navigation menu'
           >
             <Menu size={24} aria-hidden='true' />
@@ -60,32 +58,17 @@ const Navbar = () => {
       {/* Backdrop overlay */}
       {isOpen && (
         <div 
-          className='fixed inset-0 bg-black/50 z-40 transition-opacity'
+          className='fixed inset-0 z-40 bg-black/50 transition-opacity md:hidden'
           onClick={() => setIsOpen(false)}
         />
       )}
 
-      {/* Slide-over Drawer */}
-      <div className={`fixed left-0 top-0 z-50 h-full w-[min(20rem,calc(100vw-2rem))] transform bg-white shadow-lg transition-transform duration-300 ease-in-out ${
+      {/* Mobile navigation opens from the left and moves toward the right. */}
+      <div id='mobile-navigation' className={`fixed left-0 top-0 z-50 h-full w-[min(11rem,calc(50vw-1rem))] -translate-x-full transform bg-white shadow-lg transition-transform duration-300 ease-in-out md:hidden ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}>
-        <div className='flex items-center justify-between p-4 border-b'>
-          <div className='text-lg font-semibold'>
-            <p>Welcome to...</p>
-            <p className='font-sans text-4xl font-bold text-emerald-800'>SSM ERP</p>
-          </div>
-          <button
-            type='button'
-            onClick={() => setIsOpen(false)}
-            className='rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-black'
-            aria-label='Close navigation menu'
-            title='Close navigation menu'
-          >
-            <X size={22} aria-hidden='true' />
-          </button>
-        </div>
-
-        <nav className='p-4'>
+        <div className='flex items-start justify-between pl-2 pt-2 pr-2'>
+            <nav className='p-4'>
           <ul className='flex flex-col space-y-2'>
             {navItems.map((item) => (
               <li key={item.to}>
@@ -103,6 +86,18 @@ const Navbar = () => {
             ))}
           </ul>
         </nav>
+          <button
+            type='button'
+            onClick={() => setIsOpen(false)}
+            className='rounded-lg p-2 pt-5 text-gray-500 hover:bg-gray-100 hover:text-black'
+            aria-label='Close navigation menu'
+            title='Close navigation menu'
+          >
+            <X size={22} aria-hidden='true' />
+          </button>
+        </div>
+
+       
       </div>
     </>
   )

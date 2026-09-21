@@ -27,7 +27,6 @@ const Hero_Banner = () => {
 
   return (
     <section className="relative aspect-4/3 w-full overflow-hidden border-b-8 border-white bg-black sm:aspect-video lg:aspect-21/9">
-      {/* Background Video */}
       <video
         ref={videoRef}
         className={`absolute inset-0 block h-full w-full object-cover transition-opacity duration-700 ease-in-out ${
@@ -43,10 +42,8 @@ const Hero_Banner = () => {
         Your browser does not support the video tag.
       </video>
 
-      {/* Dark Overlay for Readability */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
+      <div className="absolute inset-0 z-10 bg-black/40" />
 
-      {/* Text Content Overlay */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 text-center sm:px-6">
         <h1 className="max-w-4xl text-[clamp(1.75rem,5vw,3.75rem)] font-bold leading-tight tracking-tight text-white drop-shadow-md">
           Welcome to SSM Weaving <br /> & Knitting Mills
@@ -55,16 +52,10 @@ const Hero_Banner = () => {
           Crafting excellence in every thread with state-of-the-art weaving technology.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-          <a
-            href="#contact"
-            className="bg-emerald-900 hover:bg-emerald-900 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-colors"
-          >
+          <a href="#contact" className="bg-emerald-900 px-6 py-3 font-semibold text-white shadow-lg transition-colors hover:bg-emerald-900">
             Explore
           </a>
-          <a
-            href="#products"
-            className="bg-white/20 hover:bg-white/30 text-white font-semibold px-6 py-3 rounded-lg backdrop-blur-sm transition-colors"
-          >
+          <a href="#products" className="bg-white/20 px-6 py-3 font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/30">
             Our Products
           </a>
         </div>

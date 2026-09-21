@@ -15,6 +15,37 @@ body {
 	animation: pageFadeIn 0.35s ease-in-out;
 }
 
+.timeline-title {
+	color: #0f172a;
+}
+
+.timeline-title--visible {
+	color: transparent;
+	background-image: linear-gradient(90deg, #047857, #0f172a 62%);
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	animation: titleFill 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.timeline-stage {
+	opacity: 0;
+	transform: translateY(42px);
+	transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.timeline-stage--visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@keyframes titleFill {
+	to {
+		background-size: 100% 100%;
+	}
+}
+
 @keyframes pageFadeIn {
 	from {
 		opacity: 0;
@@ -48,5 +79,16 @@ body {
 @media (prefers-reduced-motion: reduce) {
 	.countries-marquee__track {
 		animation: none;
+	}
+
+	.timeline-title--visible {
+		animation: none;
+		background-size: 100% 100%;
+	}
+
+	.timeline-stage {
+		opacity: 1;
+		transform: none;
+		transition: none;
 	}
 }
