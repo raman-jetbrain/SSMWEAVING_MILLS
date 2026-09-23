@@ -9,7 +9,6 @@ const Navbar = () => {
   const navItems = [
     { label: 'Home', to: '/dashboard' },
     { label: 'About', to: '/about' },
-    { label: 'Services', to: '/services' },
     { label: 'Contact', to: '/contact' },
     { label: 'Products', to: '/products' }
   ]

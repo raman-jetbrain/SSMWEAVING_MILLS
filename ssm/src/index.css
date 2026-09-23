@@ -40,6 +40,17 @@ body {
 	transform: translateY(0);
 }
 
+.product-reveal {
+	opacity: 0;
+	transform: translateY(28px);
+	transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product-reveal--visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
 @keyframes titleFill {
 	to {
 		background-size: 100% 100%;
@@ -87,6 +98,13 @@ body {
 	}
 
 	.timeline-stage {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+
+	.product-reveal,
+	.product-reveal--visible {
 		opacity: 1;
 		transform: none;
 		transition: none;

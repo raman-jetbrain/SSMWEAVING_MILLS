@@ -1,6 +1,23 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { ShoppingCart } from 'lucide-react'
 import img1 from '../../assets/Products/prod1.jpg'
+import yarnDyed from '../../assets/Products/Yarn-Dyed.webp'
+import CottonCanvas from '../../assets/Products/cotton-canvas-fabrics.webp'
+import fannel_fabric from '../../assets/Products/Flannel Fabrics.webp'
+import Knitted_Fabrics from '../../assets/Products/Knitted Fabrics.webp'
+import Woven_Canvas_Bags from '../../assets/Products/Woven Canvas Bags.webp'
+import Cotton_Grey_Sheeting from '../../assets/Products/Cotton Grey Sheeting.webp'
+import Knitted_Garments from '../../assets/Products/Knitted Garments.webp'
+import Woven_Terry_Fabric from '../../assets/Products/Woven Terry Fabric.webp'
+import Denim_Fabric from '../../assets/Products/Denim Fabric.webp'
+import Silk_Pure from '../../assets/Products/Silk Pure.webp'
+import Poly_Cotton_Woven_Fabric from '../../assets/Products/Poly Cotton Woven Fabric.webp'
+import sportsDress from '../../assets/Products/sportDress.png'
+import BedSheets from '../../assets/Products/Bed Sheets.webp'
+import RoundNeck from '../../assets/Products/Round Neck T-Shirt.png'
+import Collared_T_Shirt from '../../assets/Products/Collared T-Shirt.png'
+import Baby_Garments from '../../assets/Products/Baby Garments.png'
+import Caps from '../../assets/Products/Caps.webp'
 import img2 from '../../assets/Products/prod2.webp'
 import img3 from '../../assets/Products/prod3.jpg'
 import img4 from '../../assets/Products/prod4.jpg'
@@ -9,25 +26,25 @@ import img6 from '../../assets/Products/prod6.webp'
 
 const products = [
   { name: 'Reactive Print In Woven Fabrics', image: img1, detail: 'Premium woven textiles for fashion and industrial use.' },
-  { name: 'Yarn Dyed Fabrics', image: img2, detail: 'Comfort-first knits for everyday and premium use.' },
+  { name: 'Yarn Dyed Fabrics', image: yarnDyed, detail: 'Comfort-first knits for everyday and premium use.' },
   { name: 'Dyed Woven Fabrics', image: img3, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
-  { name: 'Flannel Fabrics', image: img4, detail: 'High-volume shipments crafted to international standards.' },
-   { name: 'Corduroy Fabrics', image: img5, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
-  { name: 'Knitted Fabrics', image: img6, detail: 'High-volume shipments crafted to international standards.' },
-   { name: 'Canvas Fabrics', image: img1, detail: 'Premium woven textiles for fashion and industrial use.' },
-  { name: 'Cotton Grey Sheeting', image: img2, detail: 'Comfort-first knits for everyday and premium use.' },
-  { name: 'Knitted Garments', image: img3, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
-  { name: 'Woven Terry Fabric', image: img4, detail: 'High-volume shipments crafted to international standards.' },
-   { name: 'Denim Fabric', image: img5, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
-  { name: 'Silk Pure', image: img6, detail: 'High-volume shipments crafted to international standards.' },
-   { name: 'Woven Canvas Bags', image: img3, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
-  { name: 'Poly Cotton Woven Fabric', image: img4, detail: 'High-volume shipments crafted to international standards.' },
-   { name: 'Caps', image: img5, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
-  { name: 'Sports Dress', image: img6, detail: 'High-volume shipments crafted to international standards.' },
-   { name: 'Bed Sheets', image: img4, detail: 'High-volume shipments crafted to international standards.' },
-   { name: 'Round Neck T-Shirt', image: img5, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
-  { name: 'Collared T-Shirt', image: img6, detail: 'High-volume shipments crafted to international standards.' },
-    { name: 'Baby Garments', image: img6, detail: 'High-volume shipments crafted to international standards.' },
+  { name: 'Flannel Fabrics', image: fannel_fabric , detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Corduroy Fabrics', image: img4, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
+  { name: 'Knitted Fabrics', image: Knitted_Fabrics, detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Canvas Fabrics', image: CottonCanvas, detail: 'Premium woven textiles for fashion and industrial use.' },
+  { name: 'Cotton Grey Sheeting', image: Cotton_Grey_Sheeting, detail: 'Comfort-first knits for everyday and premium use.' },
+  { name: 'Knitted Garments', image: Knitted_Garments, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
+  { name: 'Woven Terry Fabric', image:Woven_Terry_Fabric , detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Denim Fabric', image: Denim_Fabric, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
+  { name: 'Silk Pure', image: Silk_Pure, detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Woven Canvas Bags', image: Woven_Canvas_Bags, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
+  { name: 'Poly Cotton Woven Fabric', image: Poly_Cotton_Woven_Fabric, detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Caps', image: Caps, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
+  { name: 'Sports Dress', image: sportsDress, detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Bed Sheets', image: BedSheets, detail: 'High-volume shipments crafted to international standards.' },
+   { name: 'Round Neck T-Shirt', image: RoundNeck, detail: 'Durable and elegant fabrics for interiors and hospitality.' },
+  { name: 'Collared T-Shirt', image: Collared_T_Shirt, detail: 'High-volume shipments crafted to international standards.' },
+    { name: 'Baby Garments', image: Baby_Garments, detail: 'High-volume shipments crafted to international standards.' },
 ]
 
 const sizes = ['XS', 'S', 'M', 'L', 'XL', 'Custom size']
@@ -51,6 +68,8 @@ const getFabricDetails = (name) => {
 
 const ProductCon = () => {
   const [selectedSizes, setSelectedSizes] = useState({})
+  const [visibleProducts, setVisibleProducts] = useState(new Set())
+  const [isProductHeadingVisible, setIsProductHeadingVisible] = useState(false)
   const [selectedProduct, setSelectedProduct] = useState(null)
   const [quantity, setQuantity] = useState('')
   const [cartItems, setCartItems] = useState([])
@@ -60,10 +79,40 @@ const ProductCon = () => {
   const productViewRef = useRef(null)
   const confirmationTimerRef = useRef(null)
   const cartHideTimerRef = useRef(null)
+  const productRefs = useRef([])
+  const productHeadingRef = useRef(null)
 
-  useEffect(() => () => {
-    clearTimeout(confirmationTimerRef.current)
-    clearTimeout(cartHideTimerRef.current)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return
+
+          if (entry.target === productHeadingRef.current) {
+            setIsProductHeadingVisible(true)
+            observer.unobserve(entry.target)
+            return
+          }
+
+          const productIndex = Number(entry.target.dataset.product)
+          setVisibleProducts((current) => {
+            if (current.has(productIndex)) return current
+            return new Set(current).add(productIndex)
+          })
+          observer.unobserve(entry.target)
+        })
+      },
+      { threshold: 0.12 }
+    )
+
+    if (productHeadingRef.current) observer.observe(productHeadingRef.current)
+    productRefs.current.filter(Boolean).forEach((product) => observer.observe(product))
+
+    return () => {
+      observer.disconnect()
+      clearTimeout(confirmationTimerRef.current)
+      clearTimeout(cartHideTimerRef.current)
+    }
   }, [])
 
   const openProduct = (item, index) => {
@@ -150,7 +199,7 @@ const ProductCon = () => {
   return (
     <section className="bg-slate-50 px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto w-full max-w-7xl">
-        <div className="mb-10 text-center">
+        <div ref={productHeadingRef} className={`product-reveal mb-10 text-center ${isProductHeadingVisible ? 'product-reveal--visible' : ''}`}>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Our products</p>
           <h3 className="mt-3 text-3xl font-bold text-slate-900 md:text-4xl">Textiles built for performance and trust</h3>
         </div>
@@ -170,9 +219,12 @@ const ProductCon = () => {
         <div className="grid w-full auto-rows-116 gap-10 md:grid-cols-2 xl:grid-cols-3">
           {products.map((item, index) => (
             <div
+              ref={(element) => { productRefs.current[index] = element }}
+              data-product={index}
               key={`${item.name}-${index}`}
               onClick={() => openProduct(item, index)}
-              className="h-full cursor-pointer overflow-hidden border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className={`product-reveal h-full cursor-pointer overflow-hidden border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl ${visibleProducts.has(index) ? 'product-reveal--visible' : ''}`}
+              style={{ transitionDelay: `${Math.min(index % 6, 5) * 70}ms` }}
             >
               <img src={item.image} alt={item.name} className="h-56 w-full object-cover" />
               <div className="flex min-h-60 flex-col p-5">
